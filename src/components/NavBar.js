@@ -49,31 +49,27 @@ function NavBar() {
                 Menu
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/testimonials"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Testimonials
-              </Link>
-            </li>
             <li>
               <Link
                 to="/reserveatable"
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                Reserve a table
+                Reservations
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                to="/contactus"
+                to="/orderonline"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Contact Us
+                Order Online
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/login" className="nav-links" onClick={closeMobileMenu}>
+                Login
               </Link>
             </li>
           </ul>
