@@ -13,7 +13,9 @@
 
 .cards-item-ordernow{
     font-size: 20px;
-    color: black;;
+    color: black;
+    position: absolute;
+    bottom: 0;
 }
 .cards-item-ordernow:hover{
     text-decoration: underline;
@@ -106,7 +108,7 @@
 }
 .cards-item-text-header{
     color: #333333;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-left: auto;
 }
 .cards-item-text-header-price{
