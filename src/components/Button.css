@@ -9,8 +9,9 @@
     cursor: pointer;
 }
 .btn--primary {
-    background-color: var(--primary);
-    color: #f4ce14;
+   background-color: var(--primary);
+   /* background-color:#f4ce14; */
+   /* color: #f4ce14; */
     border: 1px solid var(--primary);
 }
 .btn--outline{
