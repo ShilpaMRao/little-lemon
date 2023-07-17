@@ -2,13 +2,11 @@ import React from "react";
 import "../../App.css";
 import HeroSection from "../HeroSection";
 import "../HeroSection.css";
-import Cards from "../Cards";
 
 function Home() {
   return (
     <>
       <HeroSection />
-      <Cards />
     </>
   );
 }
