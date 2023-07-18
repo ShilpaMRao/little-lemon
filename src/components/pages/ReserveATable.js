@@ -30,7 +30,7 @@ const BookingForm = (props) => {
     "21:00",
     "22:00",
   ];
-  // const [availableTimes, setAvailableTimes] = useState(initialAvailableTimes);
+
   const [availableTimes, dispatch] = useReducer(reducer, initialAvailableTimes);
 
   const [formData, setFormData] = useState({
