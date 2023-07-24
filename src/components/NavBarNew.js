@@ -5,7 +5,6 @@ import "./NavBar.css";
 import "./Button.css";
 import Cards from "./Cards";
 import ReserveATable from "./pages/ReserveATable";
-import ReserveATable_New from "./pages/ReserveATable_New";
 import Home from "./pages/Home";
 import AboutMarioAdrian from "./pages/AboutMarioAdrian";
 import Login from "./pages/Login";
