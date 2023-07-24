@@ -10,7 +10,7 @@
     background: #495e57;
     border-radius: 8px;
     width: 400px;
-    height: 450px;
+    height: 470px;
   }
   
 .form{
@@ -31,4 +31,8 @@
     width: 90%;
     margin: 0 auto;
     margin-top: 20px;
+}
+p{
+    color: red;
+    margin: 0 auto;
 }

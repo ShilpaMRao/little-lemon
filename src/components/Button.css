@@ -9,10 +9,18 @@
     cursor: pointer;
 }
 .btn--primary {
-   background-color: var(--primary);
-   /* background-color:#f4ce14; */
-   /* color: #f4ce14; */
+   /* background-color: var(--primary); */
+   background-color:#f4ce14; 
+    color: black;
     border: 1px solid var(--primary);
+    height: 50px;
+    border-radius: 8px;
+    transition: all 0.3s ease-out;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+.btn--primary:hover{
+    cursor: pointer;
 }
 .btn--outline{
     background-color: transparent;
