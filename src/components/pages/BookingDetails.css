@@ -1,0 +1,29 @@
+.bookings-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    color: #495e57;
+}
+
+.bookings-table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 400px;
+    border: 1px solid #495e57;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    color: #495e57;
+}
+tr{
+    border: 1px solid #495e57;
+}

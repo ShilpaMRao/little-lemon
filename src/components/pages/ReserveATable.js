@@ -217,10 +217,10 @@ const ReserveATable = (props) => {
         onAdd={addBookingDetails}
         allBookingDetails={allBookingDetails}
       />
-      <FinalBooking
+      {/* <FinalBooking
         allBookingDetails={allBookingDetails}
         props={allBookingDetails}
-      />
+      /> */}
     </>
   );
 };

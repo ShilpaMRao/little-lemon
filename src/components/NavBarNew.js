@@ -7,7 +7,7 @@ import Cards from "./Cards";
 import ReserveATable from "./pages/ReserveATable";
 import Home from "./pages/Home";
 import AboutMarioAdrian from "./pages/AboutMarioAdrian";
-import Login from "./pages/Login";
+import BookingDetails from "./pages/BookingDetails";
 
 function NavBarNew() {
   const [reservationData, setReservationData] = useState([]);
@@ -18,6 +18,9 @@ function NavBarNew() {
   const closeMobileMenu = () => setClick(false);
 
   console.log("In NavBar :", reservationData);
+  // console.log("In NavBar : date : ", reservationData[0].date);
+  // console.log("in NavBar : time : ", reservationData[0].time);
+
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -76,8 +79,12 @@ function NavBarNew() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/login" className="nav-links" onClick={closeMobileMenu}>
-                Login
+              <Link
+                to="/bookings"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Booking Details
               </Link>
             </li>
           </ul>
@@ -91,7 +98,10 @@ function NavBarNew() {
         <Route path="/about" element={<AboutMarioAdrian />} />
         <Route path="/menu" element={<Cards />} />
         <Route path="/orderonline" element={<Cards />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/bookings"
+          element={<BookingDetails reservationData={reservationData} />}
+        />
         <Route
           path="/reserveatable"
           element={
