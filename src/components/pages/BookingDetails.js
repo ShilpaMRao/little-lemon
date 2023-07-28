@@ -26,7 +26,7 @@ const BookingDetails = (props) => {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody className="table-body">
             {props.reservationData.map((reservation, index) => (
               <tr key={index}>
                 <td>{reservation.date}</td>

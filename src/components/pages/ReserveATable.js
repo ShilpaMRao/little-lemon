@@ -11,6 +11,7 @@ const availableOccasions = [
   "Baby Shower",
 ];
 const initialAvailableTimes = [
+  "Choose time",
   "17:00",
   "18:00",
   "19:00",
@@ -94,7 +95,7 @@ const BookingForm = (props) => {
     if (!formData.date) {
       error.date = "Date is required.";
     }
-    if (!formData.time) {
+    if (!formData.time || formData.time === "Choose time") {
       error.time = "Time is required.";
     }
     if (!formData.guests) {

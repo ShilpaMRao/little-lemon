@@ -8,18 +8,31 @@
 
 .bookings-table{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 40px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 table {
     border-collapse: collapse;
     width: 400px;
+    width: 100%;
     border: 1px solid #495e57;
 }
-
-th, td {
+thead{
+    position: sticky;
+    top:0;
+    background-color:#495e57;
+}
+th {
+    padding: 8px;
+    text-align: center;
+    color: #f4ce14;
+}
+td{
     padding: 8px;
     text-align: center;
     color: #495e57;
@@ -27,3 +40,10 @@ th, td {
 tr{
     border: 1px solid #495e57;
 }
+
+
+.table-body {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
