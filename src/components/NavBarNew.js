@@ -66,7 +66,7 @@ function NavBarNew() {
                 Reservations
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 to="/orderonline"
                 className="nav-links"
@@ -74,7 +74,7 @@ function NavBarNew() {
               >
                 Order Online
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link
                 to="/bookings"
@@ -94,7 +94,7 @@ function NavBarNew() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutMarioAdrian />} />
         <Route path="/menu" element={<Cards />} />
-        <Route path="/orderonline" element={<Cards />} />
+        {/* <Route path="/orderonline" element={<Cards />} /> */}
         <Route
           path="/bookings"
           element={<BookingDetails reservationData={reservationData} />}

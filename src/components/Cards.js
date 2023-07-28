@@ -4,45 +4,57 @@ import "./Cards.css";
 import { Button } from "./Button";
 import "./Button.css";
 
+function createData(path, src, label, textheading, price, text) {
+  return { path, src, label, textheading, price, text };
+}
+
+const menuCards = [
+  createData(
+    "/menu",
+    "greek salad.jpg",
+    "Greek Salad",
+    "Greek Salad",
+    "$12.99",
+    "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with garlic and olive oil."
+  ),
+  createData(
+    "/menu",
+    "bruschetta.jpg",
+    "Bruschetta",
+    "Bruschetta",
+    "$5.99",
+    "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with garlic and olive oil."
+  ),
+  createData(
+    "/menu",
+    "lemon dessert.jpg",
+    "Lemon Dessert",
+    "Lemon Dessert",
+    "$5.00",
+    "This comes straight from grandma's receipe book, every last ingredient has been sourced and is as authentic as can be imagined."
+  ),
+];
+
 function Cards() {
   return (
     <div className="cards">
       <div className="cards-header">
         <h1>This Week's Specials!</h1>
-        <Button buttonStyle="btn--primary">Order Now</Button>
+        {/* <button className="order-now">Order Now</button> */}
       </div>
       <div className="cards-container">
         <div className="cards-wrapper">
           <ul className="cards-items">
-            <CardItems
-              path="/menu"
-              src="greek salad.jpg"
-              label="Greek Salad"
-              textheading="Greek Salad"
-              price="$12.99"
-              text="The famous greek salad of crispy lettuce,peppers,olives and our
-              Chicago style feta cheese, garnished with crunchy garlic and
-              rosemary croutons."
-              ordernow="Order Now"
-            />
-            <CardItems
-              path="/menu"
-              src="bruschetta.jpg"
-              label="Bruschetta"
-              textheading="Bruschetta"
-              price="$5.99"
-              text="Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with garlic and olive oil."
-              ordernow="Order Now"
-            />
-            <CardItems
-              path="/menu"
-              src="lemon dessert.jpg"
-              label="Lemon Dessert"
-              textheading="Lemon Dessert"
-              price="$5.00"
-              text="This comes straight from grandma's receipe book, every last ingredient has been sourced and is as authentic as can be imagined."
-              ordernow="Order Now"
-            />
+            {menuCards.map((menucard) => (
+              <CardItems
+                path={menucard.path}
+                src={menucard.src}
+                label={menucard.label}
+                textheading={menucard.textheading}
+                price={menucard.price}
+                text={menucard.text}
+              />
+            ))}
           </ul>
         </div>
       </div>
