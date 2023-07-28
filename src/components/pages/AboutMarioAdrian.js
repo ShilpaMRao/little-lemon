@@ -1,5 +1,5 @@
 import React from "react";
-import "./AboutMarioAdrian.css";
+import "../../css_files/AboutMarioAdrian.css";
 
 const AboutMarioAdrian = () => {
   return (

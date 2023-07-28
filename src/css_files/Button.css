@@ -29,6 +29,7 @@
     border: 1px solid var(--primary);
     transition: all 0.3s ease-out;
     font-size: 1.2rem;
+    border-radius: 10px;
 }
 
 

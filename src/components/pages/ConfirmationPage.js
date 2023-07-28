@@ -1,5 +1,5 @@
 import React from "react";
-import "./ConfirmationPage.css";
+import "../../css_files/ConfirmationPage.css";
 import { useLocation } from "react-router-dom";
 
 const ConfirmationPage = () => {

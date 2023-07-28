@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import { Button } from "./Button";
-import "./NavBar.css";
-import "./Button.css";
+import "C:/Users/Admin/Shilpa/Coursera/little-lemon/src/css_files/NavBar.css";
+import "C:/Users/Admin/Shilpa/Coursera/little-lemon/src/css_files/Button.css";
 import Cards from "./Cards";
 import ReserveATable from "./pages/ReserveATable";
 import Home from "./pages/Home";

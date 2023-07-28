@@ -1,8 +1,8 @@
 import React from "react";
-import "./HeroSection.css";
+import "../../../little-lemon/src/css_files/HeroSection.css";
 import "../App.css";
 import { Button } from "./Button";
-import "./Button.css";
+import "../../../little-lemon/src/css_files/Button.css";
 
 function HeroSection() {
   return (
@@ -18,7 +18,7 @@ function HeroSection() {
             focused on traditional
             <br /> receipes served with a modern <br /> twist.
           </p>
-          <Button className="btn" buttonStyle="btn--primary" buttonSize="large">
+          <Button className="btn" buttonStyle="btn--outline" buttonSize="large">
             Reserve a Table
           </Button>
         </ul>

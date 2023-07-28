@@ -17,6 +17,7 @@
 @media (max-width: 768px) {
   .list {
     margin-left: 20px;
+    display: flex;
   }
 }
 .hero-container > .list > h2 {

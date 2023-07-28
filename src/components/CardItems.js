@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Cards.css";
+import "../../../little-lemon/src/css_files/Cards.css";
 
 function CardItems(props) {
-  const { path, src, label, textheading, price, text, ordernow } = props;
+  const { path, src, label, textheading, price, text } = props;
   return (
     <>
       <li className="cards-item">

@@ -94,7 +94,7 @@ display: none;
 }
 
 .nav-menu.active {
-    background: #242222;
+    background: #f4ce14;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
@@ -110,7 +110,7 @@ display: none;
 
 .nav-links:hover {
     background-color: #495e57;
-    color: #495e57;
+    color: #f4ce14;
     border-radius: 0;
 }
 
@@ -154,7 +154,7 @@ display: none;
 
 .nav-links-mobile:hover {
     background: #fff;
-    color: #242424;
+    color: #f4ce14;
     transition: 250ms;
 }
 }

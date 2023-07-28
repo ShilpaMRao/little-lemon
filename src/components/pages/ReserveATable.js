@@ -1,10 +1,7 @@
 import React, { useEffect, useReducer } from "react";
-import "./ReserveATable.css";
-import { Button } from "../Button";
+import "../../css_files/ReserveATable.css";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
-import ConfirmationPage from "./ConfirmationPage";
+import { useNavigate } from "react-router-dom";
 
 const availableOccasions = [
   "No Occasion",
@@ -44,7 +41,7 @@ const BookingForm = (props) => {
   const isDisabled = !formData.date && !formData.time && !formData.guests;
   const [error, setError] = useState("");
   const [submit, setSubmit] = useState(false);
-  const [success, setSuccess] = useState(false);
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -77,10 +74,10 @@ const BookingForm = (props) => {
     props.onAdd(formData);
     props.setReservationData([...props.reservationData, formData]);
 
-    alert(
-      `Reservation Done for ${formData.date} at ${formData.time}PM for ${formData.guests}  guests on the occasion of ${formData.occasion}.
-       Looking forward to serving you!!!`
-    );
+    // alert(
+    //   `Reservation Done for ${formData.date} at ${formData.time}PM for ${formData.guests}  guests on the occasion of ${formData.occasion}.
+    //    Looking forward to serving you!!!`
+    // );
 
     setFormData({ time: "", date: "", guests: "", occasion: "" });
     setError("");
@@ -173,16 +170,14 @@ const BookingForm = (props) => {
             </div>
 
             <div className="form-data">
-              {/* <Link to="/confirmationpage"> */}
               <button
-                className="btn--primary"
+                className="btn--outline"
                 type="submit"
                 disabled={isDisabled}
                 onClick={handleClick}
               >
                 Make Your Reservation
               </button>
-              {/* </Link> */}
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 import HeroSection from "../HeroSection";
-import "../HeroSection.css";
+import "../../css_files/HeroSection.css";
 
 function Home() {
   return (

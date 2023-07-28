@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-import "./BookingDetails.css";
-import { useScrollTrigger } from "@material-ui/core";
+import React from "react";
+import "../../css_files/BookingDetails.css";
 
-const formatDateToDDMMYYYY = (dateString) => {
-  const date = new Date(dateString);
+// const formatDateToDDMMYYYY = (dateString) => {
+//   const date = new Date(dateString);
 
-  const day = date.getDate().toString().padStart(2, "0");
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const year = date.getFullYear();
+//   const day = date.getDate().toString().padStart(2, "0");
+//   const month = (date.getMonth() + 1).toString().padStart(2, "0");
+//   const year = date.getFullYear();
 
-  return `${day}/${month}/${year}`;
-};
+//   return `${day}/${month}/${year}`;
+// };
 const BookingDetails = (props) => {
   console.log("in Bookings page : ", props.reservationData);
   return (
