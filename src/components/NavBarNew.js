@@ -8,6 +8,7 @@ import ReserveATable from "./pages/ReserveATable";
 import Home from "./pages/Home";
 import AboutMarioAdrian from "./pages/AboutMarioAdrian";
 import BookingDetails from "./pages/BookingDetails";
+import ConfirmationPage from "./pages/ConfirmationPage";
 
 function NavBarNew() {
   const [reservationData, setReservationData] = useState([]);
@@ -16,10 +17,6 @@ function NavBarNew() {
   const [button, setButton] = useState(true);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-
-  console.log("In NavBar :", reservationData);
-  // console.log("In NavBar : date : ", reservationData[0].date);
-  // console.log("in NavBar : time : ", reservationData[0].time);
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -110,6 +107,10 @@ function NavBarNew() {
               setReservationData={setReservationData}
             />
           }
+        />
+        <Route
+          path="/confirmationpage"
+          element={<ConfirmationPage reservationData={reservationData} />}
         />
       </Routes>
     </>

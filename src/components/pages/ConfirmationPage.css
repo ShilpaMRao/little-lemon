@@ -1,0 +1,17 @@
+.confirm-header{
+    text-align: center;
+    color : #495e57;
+    margin-top: 100px;
+    font-size: 2rem;
+}
+.confirm-body{
+    text-align: center;
+    color: #495e57;
+    margin-top: 10px;
+}
+.subtext{
+    text-align: center;
+    color : #495e57;
+    margin-top: 50px;
+    font-size: 2rem;
+}

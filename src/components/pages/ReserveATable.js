@@ -2,6 +2,9 @@ import React, { useEffect, useReducer } from "react";
 import "./ReserveATable.css";
 import { Button } from "../Button";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
+import ConfirmationPage from "./ConfirmationPage";
 
 const availableOccasions = [
   "No Occasion",
@@ -38,9 +41,11 @@ const BookingForm = (props) => {
     guests: "",
     occasion: "",
   });
+  const isDisabled = !formData.date && !formData.time && !formData.guests;
   const [error, setError] = useState("");
   const [submit, setSubmit] = useState(false);
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -79,6 +84,7 @@ const BookingForm = (props) => {
 
     setFormData({ time: "", date: "", guests: "", occasion: "" });
     setError("");
+    navigate("/confirmationpage", { state: formData });
   };
 
   useEffect(() => {
@@ -165,14 +171,18 @@ const BookingForm = (props) => {
                 ))}
               </select>
             </div>
+
             <div className="form-data">
+              {/* <Link to="/confirmationpage"> */}
               <button
                 className="btn--primary"
                 type="submit"
+                disabled={isDisabled}
                 onClick={handleClick}
               >
                 Make Your Reservation
               </button>
+              {/* </Link> */}
             </div>
           </div>
         </div>
@@ -217,6 +227,7 @@ const ReserveATable = (props) => {
         onAdd={addBookingDetails}
         allBookingDetails={allBookingDetails}
       />
+
       {/* <FinalBooking
         allBookingDetails={allBookingDetails}
         props={allBookingDetails}

@@ -9,7 +9,7 @@ function HeroSection() {
     <div className="hero-section">
       <div className="hero-container">
         <ul className="list">
-          <h2> Little Lemon </h2>
+          <h2>Little Lemon</h2>
           <h4>Chicago</h4>
           <p>
             We are a family owned <br />
