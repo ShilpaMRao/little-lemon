@@ -47,5 +47,6 @@
     background: #f4ce14;
     color: black;
     transition: all 0.3s ease-out;
+    cursor: pointer;
 
 }

@@ -126,7 +126,7 @@ const BookingForm = (props) => {
         <div className="form">
           <div className="form-data" id="form">
             <div className="form-data">
-              {/* <h1>Make a reservation</h1> */}
+              <h1>Make a reservation</h1>
               <label htmlFor="res-date">Choose date:</label>
               <input
                 type="date"
@@ -192,7 +192,6 @@ const BookingForm = (props) => {
               <button
                 className="btn--outline"
                 type="submit"
-                role="button"
                 disabled={isDisabled}
                 onClick={handleClick}
               >
@@ -206,24 +205,24 @@ const BookingForm = (props) => {
   );
 };
 
-const FinalBooking = (props) => {
-  return (
-    <>
-      <ul>
-        {props.allBookingDetails.map((d) => {
-          return (
-            <li key={d.bookingDetails}>
-              <span>
-                The booking is confirmed for {d.date} at {d.time}pm for
-                {d.guests} guests on the occasion of {d.occasion}.
-              </span>
-            </li>
-          );
-        })}
-      </ul>
-    </>
-  );
-};
+// const FinalBooking = (props) => {
+//   return (
+//     <>
+//       <ul>
+//         {props.allBookingDetails.map((d) => {
+//           return (
+//             <li key={d.bookingDetails}>
+//               <span>
+//                 The booking is confirmed for {d.date} at {d.time}pm for
+//                 {d.guests} guests on the occasion of {d.occasion}.
+//               </span>
+//             </li>
+//           );
+//         })}
+//       </ul>
+//     </>
+//   );
+// };
 
 const ReserveATable = (props) => {
   const [allBookingDetails, updateAllBookingDetails] = useState([]);
