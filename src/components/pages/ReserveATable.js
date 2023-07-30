@@ -35,7 +35,7 @@ const BookingForm = (props) => {
 
   const [formData, setFormData] = useState({
     date: "",
-    time: "",
+    time: "Choose time",
     guests: "",
     occasion: "",
   });
@@ -43,10 +43,17 @@ const BookingForm = (props) => {
   const [error, setError] = useState("");
   const [submit, setSubmit] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate("");
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    // Update the formData state with the changed value
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value === null ? "" : value,
+    }));
+    // setFormData({ ...formData, [e.target.name]: e.target.value });
     const selectedTime = e.target.value;
     const selectedDate =
       e.target.name === "date" ? e.target.value : formData.date;
@@ -57,9 +64,9 @@ const BookingForm = (props) => {
       );
       return isTimeAvailable;
     });
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    // setFormData({ ...formData, [e.target.name]: e.target.value });
     dispatch({ type: "REMOVE_TIME", payload: selectedTime });
-    console.log("Form Data : ", formData);
+    // console.log("Form Data : ", formData);
     // Dispatch an action to update the availableTimes state
     dispatch({ type: "SET_AVAILABLE_TIMES", payload: filteredTimes });
   };
@@ -80,9 +87,16 @@ const BookingForm = (props) => {
     //    Looking forward to serving you!!!`
     // );
 
-    setFormData({ time: "", date: "", guests: "", occasion: "" });
+    // Instead of using useNavigate, we call the navigate prop passed from ReserveATable
+    props.navigate(formData);
+    setFormData({
+      date: "",
+      time: "Choose time",
+      guests: "",
+      occasion: "No Occasion",
+    });
     setError("");
-    navigate("/confirmationpage", { state: formData });
+    // navigate("/confirmationpage", { state: formData });
   };
 
   useEffect(() => {
@@ -112,12 +126,13 @@ const BookingForm = (props) => {
         <div className="form">
           <div className="form-data" id="form">
             <div className="form-data">
-              <h1>Make a reservation</h1>
-              <label htmlFor="res-date">Choose date : </label>
+              {/* <h1>Make a reservation</h1> */}
+              <label htmlFor="res-date">Choose date:</label>
               <input
                 type="date"
                 name="date"
                 id="res-date"
+                label="date"
                 required
                 min={currentDate}
                 value={formData.date}
@@ -126,10 +141,11 @@ const BookingForm = (props) => {
             </div>
             {error.date && <p>{error.date}</p>}
             <div className="form-data">
-              <label htmlFor="res-time">Choose time : </label>
+              <label htmlFor="res-time">Choose time:</label>
               <select
-                id="res-time "
+                id="res-time"
                 name="time"
+                label="time"
                 required
                 value={formData.time}
                 onChange={handleChange}
@@ -141,26 +157,28 @@ const BookingForm = (props) => {
             </div>
             <p>{error.time}</p>
             <div className="form-data">
-              <label htmlFor="guests">Number of guests :</label>
+              <label htmlFor="guests">Number of guests:</label>
               <input
-                type="number"
+                // type="number"
+                id="guests"
                 name="guests"
                 placeholder=""
+                label="guests"
                 min="1"
                 max="10"
                 required
-                id="guests"
-                value={formData.guests}
+                value={formData.guests.toString()}
                 onChange={handleChange}
               />
             </div>
             <p>{error.guests}</p>
             <div className="form-data">
-              <label htmlFor="occasion">Occasion (optional): </label>
+              <label htmlFor="occasion">Occasion (optional):</label>
               <select
                 id="occasion"
                 name="occasion"
                 placeholder=""
+                label="occasion"
                 value={formData.occasion}
                 onChange={handleChange}
               >
@@ -174,6 +192,7 @@ const BookingForm = (props) => {
               <button
                 className="btn--outline"
                 type="submit"
+                role="button"
                 disabled={isDisabled}
                 onClick={handleClick}
               >
@@ -211,6 +230,11 @@ const ReserveATable = (props) => {
   const addBookingDetails = (bookingDetails) => {
     updateAllBookingDetails([...allBookingDetails, bookingDetails]);
   };
+  const navigate = useNavigate();
+  const navigateToConfirmationPage = (formData) => {
+    console.log("Navigating to confirmation page with data: ", formData);
+    navigate("/confirmationpage", { state: formData });
+  };
   console.log(
     "in Reservation page : Reservation Data coming from NavBar: ",
     props.reservationData
@@ -222,6 +246,7 @@ const ReserveATable = (props) => {
         setReservationData={props.setReservationData}
         onAdd={addBookingDetails}
         allBookingDetails={allBookingDetails}
+        navigate={navigateToConfirmationPage}
       />
 
       {/* <FinalBooking
