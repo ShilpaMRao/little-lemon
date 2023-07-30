@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useReducer } from "react";
 import "../../css_files/ReserveATable.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -46,6 +46,7 @@ const BookingForm = (props) => {
   // const navigate = useNavigate("");
 
   const handleChange = (e) => {
+    setError("");
     const { name, value } = e.target;
 
     // Update the formData state with the changed value
@@ -78,7 +79,7 @@ const BookingForm = (props) => {
     if (Object.keys(validationResult).length > 0) {
       return;
     }
-    setSubmit(true);
+    setSubmit(!submit);
     props.onAdd(formData);
     props.setReservationData([...props.reservationData, formData]);
 
@@ -99,11 +100,11 @@ const BookingForm = (props) => {
     // navigate("/confirmationpage", { state: formData });
   };
 
-  useEffect(() => {
-    if (Object.keys(error).length === 0 && submit) {
-      console.log(formData);
-    }
-  }, [error]);
+  // useEffect(() => {
+  //   if (Object.keys(error).length === 0 && submit) {
+  //     console.log(formData);
+  //   }
+  // }, [error]);
   const validate = () => {
     const error = {};
     if (!formData.date) {
